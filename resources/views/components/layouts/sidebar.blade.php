@@ -1,71 +1,73 @@
 <aside id="sidebar"
-    class="w-64 bg-[#2D2D30] border-r border-[#3C3C3F] text-[#E5E5E5] flex flex-col transition-[width] duration-300 ease-in-out overflow-hidden relative shadow-[4px_0_24px_rgba(0,0,0,0.02)]">
+    class="w-64 bg-gray-900 text-gray-300 flex flex-col transition-all duration-300 ease-in-out fixed top-0 left-0 h-screen z-50 font-sans shadow-lg">
 
-    <div id="sidebar-header"
-        class="mb-10 flex flex-row items-center justify-between px-4 py-6 border-b border-[#3C3C3F] transition-all duration-300 min-h-[80px]">
-
-        <div id="sidebar-logo-container" class="flex flex-col items-center justify-center w-full h-full space-y-2">
-            <div class="flex items-center space-x-3">
-                <img src="/images/images.png" alt="Logo" class="w-10 h-10 flex-shrink-0 object-contain">
-                <span
-                    class="sidebar-text text-2xl font-bold text-[#E5E5E5] whitespace-nowrap transition-opacity duration-300">
-                    REECH CRM
-                </span>
+    <div id="sidebar-header" class="mb-6 h-20 flex items-center px-6 border-b border-gray-800">
+        <a href="/" class="flex items-center gap-3 group">
+            <div class="w-12 h-12 flex items-center justify-center rounded-full bg-white/10">
+                <img src="/images/logo.jpeg" alt="Logo"
+                    class="w-10 h-10 object-contain transition-transform duration-200 group-hover:scale-110">
             </div>
+            <span class="text-xl font-semibold text-white tracking-tight whitespace-nowrap">
+                Pacific Playa Realty
 
-
-        </div>
-
+            </span>
+        </a>
     </div>
 
-    <nav class="flex-1 px-2 py-4 space-y-2">
+    <!-- Navigation -->
+    <nav class="flex-1 py-6 px-3 space-y-2 overflow-y-auto custom-scrollbar">
         <a href="/dashboard"
-            class="nav-link group flex items-center px-4 py-3 rounded-xl transition-all duration-300 hover:bg-[#3C3C3F] hover:text-[#F56565]">
-            <i
-                class="fa-solid fa-tachometer-alt w-6 text-center text-xl transition-colors duration-300 group-hover:text-[#F56565]"></i>
-            <span
-                class="sidebar-text ml-3 font-medium whitespace-nowrap transition-opacity duration-300">Dashboard</span>
+            class="nav-link flex items-center px-4 py-3 rounded-xl transition-all duration-200 hover:bg-gray-800 hover:text-white group">
+            <i class="fa-solid fa-tachometer-alt w-5 text-center text-gray-400 group-hover:text-white"></i>
+            <span class="ml-4 text-sm font-medium">Dashboard</span>
         </a>
 
-        <a href="/departments"
-            class="nav-link group flex items-center px-4 py-3 rounded-xl transition-all duration-300 hover:bg-[#3C3C3F] hover:text-[#F56565]">
-            <i
-                class="fa-solid fa-briefcase w-6 text-center text-xl transition-colors duration-300 group-hover:text-[#F56565]"></i>
-            <span
-                class="sidebar-text ml-3 font-medium whitespace-nowrap transition-opacity duration-300">Departments</span>
+        <a href="/clients"
+            class="nav-link flex items-center px-4 py-3 rounded-xl transition-all duration-200 hover:bg-gray-800 hover:text-white group">
+            <i class="fa-solid fa-users w-5 text-center text-gray-400 group-hover:text-white"></i>
+            <span class="ml-4 text-sm font-medium">Clients</span>
         </a>
 
-        <a href="/reports"
-            class="nav-link group flex items-center px-4 py-3 rounded-xl transition-all duration-300 hover:bg-[#3C3C3F] hover:text-[#F56565]">
-            <i
-                class="fa-solid fa-chart-line w-6 text-center text-xl transition-colors duration-300 group-hover:text-[#F56565]"></i>
-            <span class="sidebar-text ml-3 font-medium whitespace-nowrap transition-opacity duration-300">Reports</span>
+        <a href="/mail-templates"
+            class="nav-link flex items-center px-4 py-3 rounded-xl transition-all duration-200 hover:bg-gray-800 hover:text-white group">
+            <i class="fa-solid fa-envelope-open-text w-5 text-center text-gray-400 group-hover:text-white"></i>
+            <span class="ml-4 text-sm font-medium">Mail Templates</span>
         </a>
+
+        <a href="/file-management"
+            class="nav-link flex items-center px-4 py-3 rounded-xl transition-all duration-200 hover:bg-gray-800 hover:text-white group">
+            <i class="fa-solid fa-folder-open w-5 text-center text-gray-400 group-hover:text-white"></i>
+            <span class="ml-4 text-sm font-medium">File Management</span>
+        </a>
+
+        <a href="/campaign-setup"
+            class="nav-link flex items-center px-4 py-3 rounded-xl transition-all duration-200 hover:bg-gray-800 hover:text-white group">
+            <i class="fa-solid fa-bullhorn w-5 text-center text-gray-400 group-hover:text-white"></i>
+            <span class="ml-4 text-sm font-medium">Campaign Setup</span>
+        </a>
+
 
         <a href="/profile"
-            class="nav-link group flex items-center px-4 py-3 rounded-xl transition-all duration-300 hover:bg-[#3C3C3F] hover:text-[#F56565]">
-            <i
-                class="fa-solid fa-user w-6 text-center text-xl transition-colors duration-300 group-hover:text-[#F56565]"></i>
-            <span class="sidebar-text ml-3 font-medium whitespace-nowrap transition-opacity duration-300">Profile</span>
+            class="nav-link flex items-center px-4 py-3 rounded-xl transition-all duration-200 hover:bg-gray-800 hover:text-white group">
+            <i class="fa-solid fa-user w-5 text-center text-gray-400 group-hover:text-white"></i>
+            <span class="ml-4 text-sm font-medium">Profile</span>
         </a>
 
         <a href="/settings"
-            class="nav-link group flex items-center px-4 py-3 rounded-xl transition-all duration-300 hover:bg-[#3C3C3F] hover:text-[#F56565]">
-            <i
-                class="fa-solid fa-cog w-6 text-center text-xl transition-colors duration-300 group-hover:text-[#F56565]"></i>
-            <span
-                class="sidebar-text ml-3 font-medium whitespace-nowrap transition-opacity duration-300">Settings</span>
+            class="nav-link flex items-center px-4 py-3 rounded-xl transition-all duration-200 hover:bg-gray-800 hover:text-white group">
+            <i class="fa-solid fa-cog w-5 text-center text-gray-400 group-hover:text-white"></i>
+            <span class="ml-4 text-sm font-medium">Settings</span>
         </a>
     </nav>
 
-    <div class="px-4 py-4 border-t border-[#3C3C3F]">
+    <!-- Logout -->
+    <div class="p-4 border-t border-gray-800">
         <form method="POST" action="{{ route('logout') }}">
             @csrf
             <button type="submit"
-                class="w-full flex items-center px-4 py-3 rounded-xl transition-all duration-300 hover:bg-[#3C3C3F] hover:text-[#F56565] group">
-                <i class="fa-solid fa-right-from-bracket w-6 text-center text-xl"></i>
-                <span
-                    class="sidebar-text ml-3 font-medium whitespace-nowrap transition-opacity duration-300">Logout</span>
+                class="w-full flex items-center px-4 py-3 rounded-xl text-red-400 transition-all duration-200 hover:bg-red-600/10 hover:text-red-500 group">
+                <i class="fa-solid fa-right-from-bracket w-5 text-center text-red-400 group-hover:text-red-500"></i>
+                <span class="ml-4 text-sm font-medium">Logout</span>
             </button>
         </form>
     </div>
@@ -78,9 +80,9 @@
     navLinks.forEach(link => {
         const linkPath = link.getAttribute('href');
         if (currentPath === linkPath || currentPath.startsWith(linkPath + '/')) {
-            link.classList.add('bg-[#B02A30]', 'text-white', 'shadow-md');
-            link.querySelector('i')?.classList.add('text-white');
-            link.classList.remove('hover:bg-[#3C3C3F]', 'hover:text-[#F56565]');
+            link.classList.add('bg-red-600', 'text-white', 'shadow-md');
+            const icon = link.querySelector('i');
+            if (icon) icon.classList.add('text-white');
         }
     });
 </script>

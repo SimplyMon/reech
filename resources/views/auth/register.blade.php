@@ -58,4 +58,26 @@
             </form>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            @if ($errors->any())
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Registration Failed',
+                    text: '{{ $errors->first() }}',
+
+                    width: '350px',
+                    padding: '1.5rem',
+                    confirmButtonColor: '#B02A30',
+                    confirmButtonText: 'Fix It',
+                    customClass: {
+                        popup: 'rounded-xl shadow-xl',
+                        title: 'text-lg font-bold text-gray-900',
+                        htmlContainer: 'text-sm text-gray-600'
+                    }
+                });
+            @endif
+        });
+    </script>
 </x-layouts.layout>

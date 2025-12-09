@@ -20,16 +20,25 @@
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
                     <input id="email"
                         class="block w-full rounded-lg bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-[#B02A30] focus:border-[#B02A30] transition"
-                        type="email" name="email" :value="old('email')" required autofocus
+                        type="email" name="email" value="{{ old('email') }}" required autofocus
                         autocomplete="username" />
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>
 
                 <div class="mt-5">
                     <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-                    <input id="password"
-                        class="block w-full rounded-lg bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-[#B02A30] focus:border-[#B02A30] transition"
-                        type="password" name="password" required autocomplete="current-password" />
+
+                    <div class="relative">
+                        <input id="password"
+                            class="block w-full rounded-lg bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-[#B02A30] focus:border-[#B02A30] transition pr-10"
+                            type="password" name="password" required autocomplete="current-password" />
+
+                        <button type="button" id="togglePassword"
+                            class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 focus:outline-none">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+
                     <x-input-error :messages="$errors->get('password')" class="mt-2" />
                 </div>
 
@@ -69,4 +78,53 @@
             </form>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const togglePassword = document.querySelector('#togglePassword');
+            const password = document.querySelector('#password');
+
+            togglePassword.addEventListener('click', function(e) {
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+
+                const icon = this.querySelector('i');
+                icon.classList.toggle('fa-eye');
+                icon.classList.toggle('fa-eye-slash');
+            });
+
+            @if (session('status'))
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: '{{ session('status') }}',
+                    padding: '1.5rem',
+                    confirmButtonColor: '#B02A30',
+                    confirmButtonText: 'Great!',
+                    customClass: {
+                        popup: 'rounded-xl shadow-xl',
+                        title: 'text-lg font-bold text-gray-900',
+                        htmlContainer: 'text-sm text-gray-600'
+                    }
+                });
+            @endif
+
+            @if ($errors->any())
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'The email or password you entered is incorrect.',
+                    padding: '1.5rem',
+                    confirmButtonColor: '#B02A30',
+                    confirmButtonText: 'Try Again',
+                    customClass: {
+                        popup: 'rounded-xl shadow-xl',
+                        title: 'text-lg font-bold text-gray-900',
+                        htmlContainer: 'text-sm text-gray-600'
+                    }
+                });
+            @endif
+        });
+    </script>
 </x-layouts.layout>
