@@ -39,7 +39,7 @@
             <span class="ml-3 text-sm font-medium">Clients</span>
         </a>
 
-        <a href="/campaign-setup"
+        <a href="/campaigns"
             class="nav-link flex items-center px-3 py-2 rounded-lg transition-all duration-200 hover:bg-gray-800 hover:text-gray-100 group">
             <i class="fa-solid fa-bullhorn w-5 text-center text-sm"></i>
             <span class="ml-3 text-sm font-medium">Campaign Setup</span>
@@ -49,7 +49,7 @@
             <span class="text-[10px] uppercase tracking-wider text-gray-600 font-bold">Tools</span>
         </div>
 
-        <a href="/mail-templates"
+        <a href="/templates"
             class="nav-link flex items-center px-3 py-2 rounded-lg transition-all duration-200 hover:bg-gray-800 hover:text-gray-100 group">
             <i class="fa-solid fa-envelope-open-text w-5 text-center text-sm"></i>
             <span class="ml-3 text-sm font-medium">Mail Templates</span>
