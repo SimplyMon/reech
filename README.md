@@ -1,63 +1,62 @@
-# Laravel Tailwind Template
+# Reech CRM
 
-A clean Laravel template project using **Laravel** and **Tailwind CSS** with a well-organized structure. This template provides a ready-to-use starting point for modern web applications with Laravel and Tailwind.
+Reech CRM is a Laravel-based web application.
 
-**Made by Simon Pasag | All Rights Reserved**
-
-## Features
-
--   Laravel PHP framework
--   Tailwind CSS for modern styling
--   Clean and organized project structure
--   Pre-configured build tools (Vite + npm)
--   Optimized for development and production
+---
 
 ## Requirements
 
--   PHP >= 8.x
+Make sure you have the following installed on your machine:
+
+-   PHP (8.x recommended)
 -   Composer
 -   Node.js & npm
--   MySQL or other supported database (optional for local setup)
+-   MySQL
+-   XAMPP (or Apache + MySQL)
+-   Git
 
-## Installation
+---
 
-Follow these steps to set up the project locally:
+## Installation & Setup
+
+### 1. Clone the Repository
 
 ```bash
-# Clone the repository
-git clone https://github.com/SimplyMon/laravel-temp.git
-
-# Navigate into the project folder
-cd laravel-temp
-
-# Install PHP dependencies
-composer install
-
-# Install Node.js dependencies
-npm install
-
-# Copy the example environment file
-cp .env.example .env
-
-# Generate application key
-php artisan key:generate
-
-# Migrations
-php artisan migrate
-
-# Optimize Laravel performance
-php artisan optimize
-
-# Alternatively, build assets for production
-npm run build
-
-# Build assets for development
-npm run dev
-
-# Start the local development server
-composer run dev
+git clone https://github.com/SimplyMon/reech.git
+cd reech-crm
 ```
 
-## License
+### 2. Install Backend Dependencies
 
-© 2025 Simon Pasag. All Rights Reserved.
+```bash
+composer install
+```
+
+### 3. Environment Configuration
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+### 4. open xampp mysql, apache
+
+### 5. Run migrations
+
+```bash
+php artisan migrate
+```
+
+### 6. Run migrations
+
+```bash
+npm install
+npm run build
+npm run dev
+```
+
+### 7. Run the Application
+
+```bash
+composer run dev
+```
