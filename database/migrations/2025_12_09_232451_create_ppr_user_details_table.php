@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('ppr_users')->onDelete('cascade'); // Links to your ppr_users table
 
+            // Profile Picture (Added here)
+            $table->string('profile_picture_path')->nullable();
+
             // Personal Information
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();

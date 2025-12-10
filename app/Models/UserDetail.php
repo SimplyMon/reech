@@ -13,6 +13,7 @@ class UserDetail extends Model
 
     protected $fillable = [
         'user_id',
+        'profile_picture_path',
         'first_name',
         'last_name',
         'middle_name',
