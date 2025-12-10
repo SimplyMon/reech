@@ -3,7 +3,8 @@
 namespace App\Models;
 
 use App\Models\Client;
-use App\Models\EmailTemplate; // <-- NEW: Import the EmailTemplate Model
+use App\Models\EmailTemplate;
+use App\Models\Campaign; // <-- NEW: Import the Campaign Model
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -49,5 +50,15 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         // Laravel links User ID (id) to EmailTemplate's foreign key (user_id)
         return $this->hasMany(EmailTemplate::class, 'user_id');
+    }
+
+    /**
+     * Define the relationship: One User (Agent) has many Campaigns.
+     * This fixes the "campaigns() not found" error.
+     */
+    public function campaigns()
+    {
+        // Assumes 'campaigns' table has a foreign key 'user_id'
+        return $this->hasMany(Campaign::class, 'user_id');
     }
 }
