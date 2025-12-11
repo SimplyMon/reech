@@ -5,15 +5,14 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmailTemplateController;
 use App\Http\Controllers\CampaignController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('Dashboard.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -11,7 +11,7 @@
             REECH CRM: Pacific Playa Realty
         </div>
 
-        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight mb-6 leading-tight">
+        <h1 class="mt-10 text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight mb-6 leading-tight">
             Customer Relations <br class="hidden md:block" />
             <span class="text-[#B02A30]">Management</span>
         </h1>
