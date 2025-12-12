@@ -58,5 +58,5 @@ npm run dev
 ### 7. Run the Application
 
 ```bash
-composer run dev
+php artisan serve
 ```
