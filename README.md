@@ -23,7 +23,7 @@ Make sure you have the following installed on your machine:
 
 ```bash
 git clone https://github.com/SimplyMon/reech.git
-cd reech-crm
+cd reech
 ```
 
 ### 2. Install Backend Dependencies
@@ -39,7 +39,7 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-### 4. open xampp mysql, apache
+### 4. Make sure to open xampp mysql, apache
 
 ### 5. Run migrations
 
@@ -47,15 +47,24 @@ php artisan key:generate
 php artisan migrate
 ```
 
-### 6. Run migrations
+### 6. Clear Cache and optimize
+
+```bash
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+php artisan optimize
+```
+
+### 7. Run migrations
 
 ```bash
 npm install
-npm run build
 npm run dev
 ```
 
-### 7. Run the Application
+### 8. Run the Application
 
 ```bash
 php artisan serve
